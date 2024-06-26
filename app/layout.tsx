@@ -29,8 +29,8 @@ const bricolageGrotesque = Bricolage_Grotesque({ subsets: ["latin"] });
 
 
 export const metadata: Metadata = {
-  title: "WeVote",
-  description: "Vote Your candidate",
+  title: "Nick dk",
+  description: "POrtfolio for nick dk",
 };
 
 export default function RootLayout({
