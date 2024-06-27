@@ -31,7 +31,7 @@ const Twitter = ({ className, ...props }: TwitterIconProps) => (
   </svg>
 );
 
-const Verified = ({ className, ...props }: TwitterIconProps) => (
+export const Verified = ({ className, ...props }: TwitterIconProps) => (
   <svg
     aria-label="Verified Account"
     viewBox="0 0 24 24"

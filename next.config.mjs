@@ -4,7 +4,17 @@ const nextConfig = {
         serverActions: {
           
         }
-      }
+      },
+      images: {
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: "aceternity.com",
+            port: '',
+            pathname: '/images/**',
+          },
+        ],
+      },
 };
 
 export default nextConfig;
