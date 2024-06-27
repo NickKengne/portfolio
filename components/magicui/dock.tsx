@@ -2,7 +2,8 @@
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import React, { PropsWithChildren, useRef } from "react";
+import Link from "next/link";
+import React, { PropsWithChildren, useEffect, useRef, useState } from "react";
 
 export interface DockProps extends VariantProps<typeof dockVariants> {
   className?: string;
@@ -41,13 +42,29 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       });
     };
 
+
+    const [sticked, setSticked] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setSticked(window.scrollY > 100);
+      console.log("scrool")
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
     return (
       <motion.div
         ref={ref}
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
         {...props}
-        className={cn(dockVariants({ className }), className)}
+        className={cn(dockVariants({ className }), className,`z-50 fixed bottom-2 ${sticked ? 'bg-background' : 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'}`)}
       >
         {renderChildren()}
       </motion.div>
@@ -62,6 +79,7 @@ export interface DockIconProps {
   magnification?: number;
   distance?: number;
   mouseX?: any;
+  to:string;
   className?: string;
   children?: React.ReactNode;
   props?: PropsWithChildren;
@@ -73,6 +91,7 @@ const DockIcon = ({
   distance = DEFAULT_DISTANCE,
   mouseX,
   className,
+  to,
   children,
   ...props
 }: DockIconProps) => {
@@ -96,17 +115,21 @@ const DockIcon = ({
     damping: 12,
   });
 
+  
+
   return (
     <motion.div
       ref={ref}
       style={{ width }}
       className={cn(
-        "flex aspect-square  cursor-pointer items-center justify-center rounded-full bg-neutral-400/40 hover:bg-primary",
+        `flex aspect-square cursor-pointer items-center justify-center rounded-full hover:bg-primary`,
         className,
       )}
       {...props}
     >
-      {children}
+     <Link href={to}>
+     {children}
+     </Link>
     </motion.div>
   );
 };

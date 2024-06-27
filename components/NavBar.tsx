@@ -1,31 +1,35 @@
+"use client";
+
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { Home, Pencil, Star, User } from "lucide-react";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 export function NavBar() {
+ 
+
   return (
-    
-      <Dock>
-        <DockIcon>
-          <Home/>
-        </DockIcon>
-        <DockIcon>
-          <User/>
-        </DockIcon>
-        <DockIcon>
-          <Pencil/>
-        </DockIcon>
-        <DockIcon>
-          <Star />
-        </DockIcon>
-        <DockIcon>
-          <Icons.gitHub className="h-6 w-6" />
-        </DockIcon>
-      </Dock>
+    <Dock>
+      <DockIcon to="/">
+        <Home />
+      </DockIcon>
+      <DockIcon to="http://www.google.com">
+        <User />
+      </DockIcon>
+      <DockIcon to="http://www.google.com">
+        <Pencil />
+      </DockIcon>
+      <DockIcon to="http://www.google.com">
+        <Star />
+      </DockIcon>
+      <DockIcon to="http://www.google.com" >
+        <Icons.gitHub className="h-6 w-6" />
+      </DockIcon>
+    </Dock>
   );
 }
+
 
 const Icons = {
   gitHub: (props: IconProps) => (
