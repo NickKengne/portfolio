@@ -1,12 +1,8 @@
-import { CloudCircle } from "@/components/CloudCircle";
-import { Verified } from "@/components/magicui/tweet-card";
 import { TweetCard } from "@/components/magicui/TweetCard";
 import { MarqueeCard } from "@/components/MarqueeCard";
 import { NavBar } from "@/components/NavBar";
 import { ParallaxPortfolio } from "@/components/ParallaxPorfolio";
-import PostLinkdin from "@/components/PostLinkdin";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import React from "react";
 import Banner from "./components/Banner";
 
