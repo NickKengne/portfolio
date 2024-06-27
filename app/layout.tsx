@@ -45,7 +45,7 @@ export default function RootLayout({
       <body
         className={clsx(
           "min-h-screen bg-background w-full flex",
-          inter.className,
+          bricolageGrotesque.className,
           { "debug-screens": process.env.NODE_ENV === "development" }
         )}
       >
