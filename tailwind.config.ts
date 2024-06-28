@@ -70,6 +70,10 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "background-position-spin": {
+          "0%": { backgroundPosition: "top center" },
+          "100%": { backgroundPosition: "bottom center" },
+        },
         spin: {
           from: {
             transform: "rotate(0deg)"
@@ -134,7 +138,8 @@ const config = {
         "caret-blink": "caret-blink 1.25s ease-out infinite",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
-
+          backgroundPositionSpin:
+          "background-position-spin 3000ms infinite alternate",
       },
     },
   },

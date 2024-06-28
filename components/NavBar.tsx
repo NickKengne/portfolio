@@ -23,7 +23,7 @@ export function NavBar() {
       <DockIcon to="http://www.google.com">
         <Star />
       </DockIcon>
-      <DockIcon to="http://www.google.com" >
+      <DockIcon to="https://github.com/NickKengne/" >
         <Icons.gitHub className="h-6 w-6" />
       </DockIcon>
     </Dock>

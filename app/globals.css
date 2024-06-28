@@ -88,3 +88,25 @@
 /* .color{
   color: hsl(32, 100%, 50%);
 } */
+
+
+.btn{
+  padding: 10px 30px;
+  background: linear-gradient(to right , #ffdc52 50% , white 50%);
+  background-size: 200%;
+  background-position: 100%;
+  transition: all .4s ease-in-out;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 21px;
+  border: 1px solid black;
+
+}
+
+.btn:hover{
+  background-position: 0%;
+  color: black;
+  border: 1px solid #ffdc52;
+  border-radius: 0px;
+}

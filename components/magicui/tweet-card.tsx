@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Linkedin } from "lucide-react";
 import { Suspense } from "react";
 import {
   enrichTweet,
@@ -124,7 +125,7 @@ export const TweetHeader = ({ tweet }: { tweet: EnrichedTweet }) => (
           {truncate(tweet.user.name, 20)}
           {tweet.user.verified ||
             (tweet.user.is_blue_verified && (
-              <Verified className="ml-1 inline h-4 w-4 text-blue-500" />
+              <Verified className="ml-1 inline h-4 w-4 text-primary" />
             ))}
         </a>
         <div className="flex items-center space-x-1">
@@ -141,7 +142,7 @@ export const TweetHeader = ({ tweet }: { tweet: EnrichedTweet }) => (
     </div>
     <a href={tweet.url} target="_blank" rel="noreferrer">
       <span className="sr-only">Link to tweet</span>
-      <Twitter className="h-5 w-5 items-start text-[#3BA9EE] transition-all ease-in-out hover:scale-105" />
+      <Linkedin className="h-5 w-5 items-start text-[#3BA9EE] transition-all ease-in-out hover:scale-105" />
     </a>
   </div>
 );

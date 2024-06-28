@@ -5,6 +5,10 @@ import { ParallaxPortfolio } from "@/components/ParallaxPorfolio";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import React from "react";
 import Banner from "./components/Banner";
+import { NeonCard } from "@/components/NeonCard";
+import { Linkedin, Mail, Phone } from "lucide-react";
+import Link from "next/link";
+import Footer from "@/components/Footer";
 
 export default function page() {
 
@@ -26,23 +30,23 @@ export default function page() {
       <div className="h-auto max-w-[100%] relative w-[100%]">
         <ParallaxPortfolio />
       </div>
-      
-      <h1 className="text-primary font-semibold leading-7">
-        LinkedIn
-      </h1>
-      <p className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
-        Posts LinkedIn that's interested you !
+      <NeonCard/>
+      <p className="mt-7 text-4xl font-bold tracking-tight sm:text-5xl">
+        Posts that will <span className="text-primary">interest</span> you!
       </p>
 
-      <div className="flex gap-2 mt-8 flex-wrap justify-center items-center">
+      <div className="flex gap-2 mt-8 p-7 flex-wrap justify-center items-center">
         {
           post.map((post) => (
             <TweetCard id={post.id} key={post.id}/>
           ))
         }
       </div>
+      <p className="mt-7 text-4xl font-bold tracking-tight sm:text-5xl">
+        Latest <span className="text-primary">reviews</span> about my posts ⭐ 
+      </p>
       <MarqueeCard />
-      {/* <PostLinkdin/> */}
+      <Footer/>
     </div>
   );
 }
